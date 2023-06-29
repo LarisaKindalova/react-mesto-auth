@@ -18,7 +18,7 @@ export default function Register({setIsToolTipOpen,
       email: "",
       password: "",
     });
-  }, [isLoggedIn]);
+  }, [setIsSuccessMessage(false)]);
 
   function handleChangeValue(evt) {
     const { name, value } = evt.target;
@@ -60,7 +60,7 @@ export default function Register({setIsToolTipOpen,
           id="email"
           placeholder="Email"
           name="email"
-          value={formValue.email}
+          value={formValue.email || ""}
           onChange={handleChangeValue}
         ></input>
         <span className="form__input-error" />
@@ -72,7 +72,7 @@ export default function Register({setIsToolTipOpen,
           max={12}
           id="password"
           name="password"
-          value={formValue.password}
+          value={formValue.password || ""}
           placeholder="Пароль"
           onChange={handleChangeValue}
           autoComplete="on"
