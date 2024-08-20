@@ -18,7 +18,8 @@ export default function Register({setIsToolTipOpen,
       email: "",
       password: "",
     });
-  }, [setIsSuccessMessage(false)]);
+  }, 
+[]);
 
   function handleChangeValue(evt) {
     const { name, value } = evt.target;

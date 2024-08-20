@@ -1,5 +1,5 @@
 import React from "react";
-import Form from "./Form"
+import Popup from "./Popup";
 
 export default function PopupWithForm({
   title,
@@ -9,19 +9,14 @@ export default function PopupWithForm({
   onClose,
   buttonText,
   onSubmit,
-  onMouseDown
 }) {
   
   
   return (
-    <div className={`popup popup_type_${name} ${isOpen ? "popup_opened" : ""}`}
-    onMouseDown={onMouseDown}>
-      <div className="popup__container">
-        <button
-          onClick={onClose}
-          className="popup__close-button"
-          type="button"
-        />
+    <Popup 
+    name={name}
+    isOpen={isOpen}
+    onClose={onClose}>
         <h2 className="popup__title">{title}</h2>
         <form
           className={`popup__form popup__form_${name}`}
@@ -37,7 +32,6 @@ export default function PopupWithForm({
             {buttonText}
           </button>
         </form>
-      </div>
-    </div>
+    </Popup>
   );
 }
